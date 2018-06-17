@@ -22,5 +22,5 @@ usrconf() {
       *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;;
     esac
   done
-  cd "$usrconfpath/.usrcmds/"
+  cd "$usrconfpath"
 }

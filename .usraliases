@@ -1,0 +1,18 @@
+# Vim style commands for terminal
+    alias :q=exit
+
+# Fast access...
+    # ... to usb sticks
+    alias cdusb='cd /media/ekzyis/ && ls'
+    # ... to desktop
+    export desk=~/Schreibtisch
+    # ... to bash configuration
+    alias bashconf='vim ~/.bashrc'
+    alias reinit='. ~/.bashrc'
+
+# copy dir to path
+alias cpdir='cp -r'
+
+# Standard opener for files
+alias o=xdg-open
+

@@ -1,0 +1,131 @@
+# Open website with chromium in background and no shell output
+chromium() {
+  ( chromium-browser "$1" & ) > /dev/null 2>&1 
+  # redirects stdout to /dev/null and stderr to stdout
+}
+alias chr=chromium
+
+# Google
+    google() {
+        chromium https://google.com
+    }
+    # Google Drive
+    gdrive() {
+        chromium https://drive.google.com/drive/my-drive
+    }
+    # GMail
+    mail() {
+        chromium https://mail.google.com
+    }
+
+# helper function for error handling of long options
+_showerror() {
+  if [ "$OPTERR" != 1 ] || [ "${optspec:0:1}" != ":" ]; then
+    echo "$1: Ungültige Option -- $OPTARG"
+  fi
+}
+
+# Datenbanken
+dbpath=~/Schreibtisch/Datenbanken
+dburl="https://elearning2.uni-heidelberg.de/course/view.php?id=17281"
+db() {
+  OPTIND=1
+  while getopts ":c-:" opt
+  do
+     case "$opt" in
+        "-")  # check for long parameters
+          case "$OPTARG" in
+            chromium)
+              chromium "$dburl";;
+            *)
+              echo "db: Ungültige Option -- $OPTARG"
+          esac;;
+        c) chromium "$dburl";;
+        *)
+          echo "db: Ungültige Option -- $OPTARG"
+     esac
+  done
+  if [ -d "$dbpath" ]; then
+    cd "$dbpath"
+  fi
+}
+
+# Numerik
+numpath=~/Schreibtisch/Numerik
+numurl="https://conan.iwr.uni-heidelberg.de/teaching/numerik0_ss2018/"
+num() {
+  __download() {
+    outdir="$numpath/Übungsblätter"
+    if [ ! -d "$outdir" ]; then
+      mkdir -p "$outdir"
+    fi
+    cd "$outdir"
+    dlurl=$(echo $numurl | sed "s/heidelberg.de\//&data\//g")
+    curl --remote-name-all -f ${dlurl}uebung0{1..9}.pdf
+  }
+  OPTIND=1
+  while getopts ":cd-:" opt
+  do
+    case "$opt" in
+      "-")  # check for long parameters
+        case "$OPTARG" in
+          chromium) chromium "$numurl";;
+          download) __download;;
+          *) echo "num: Ungültige Option -- $OPTARG"
+        esac;;
+      c) chromium "$numurl";;
+      d) __download;;
+      *) echo "num: Ungültige Option -- $OPTARG"
+    esac
+  done
+  if [ -d "$numpath" ]; then
+    cd "$numpath"
+  fi
+}
+
+# Theoretische Informatik
+theopath=~/Schreibtisch/Theoretische\ Informatik
+theourl="http://www.math.uni-heidelberg.de/logic/ss18/theoinf_ss18.html"
+theo() {
+  __download() {
+    outdir="$theopath/Übungsblätter"
+    if [ ! -d "$outdir" ]; then
+      mkdir -p "$outdir"
+    fi
+    cd "$outdir"
+    curl --remote-name-all -f ${theourl:0:$((${#theourl}-10))}/SS18_Blatt_{1..15}.pdf
+  }
+  OPTIND=1
+  while getopts ":cd-:" opt
+  do
+     case "$opt" in
+        "-")  # check for long parameters
+          case "$OPTARG" in
+            chromium) chromium "$theourl";;
+            download) __download;;
+            *) echo "theo: Ungültige Option -- $OPTARG"
+          esac;;
+        c) chromium "$theourl";;
+        d) __download;;
+        *) echo "theo: Ungültige Option -- $OPTARG"
+     esac
+  done
+  if [ -d "$theopath" ]; then
+    cd "$theopath"
+  fi
+}
+
+# Müsli
+müsli() {
+  chromium https://muesli.mathi.uni-heidelberg.de/user/login
+}
+
+# Ricoh
+ricoh() {
+    chromium https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cfm
+}
+
+# Discord
+discord() {
+  chromium https://discordapp.com/channels/@me
+}

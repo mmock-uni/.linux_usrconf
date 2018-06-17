@@ -1,0 +1,26 @@
+# User configuration
+usrconfpath=~/.bash_usrconf
+usrconf() {
+  __reinit() {
+    . ~/.bashrc
+  }
+  OPTIND=1
+  while getopts ":u-:" opt
+  do
+    case "$opt" in
+      "-")  # check for long parameters
+        case "$OPTARG" in
+          update) __reinit; return 0;;
+          usraliases) subl "$usrconfpath/.usraliases"; return 0;;
+          usrfunc) subl "$usrconfpath/.usrcmds/.usrfunc"; return 0;;
+          webfunc) subl "$usrconfpath/.usrcmds/.webfunc"; return 0;;
+          algosound) subl "$usrconfpath/.usrcmds/.algosound"; return 0;;
+          cpusb) subl "$usrconfpath/.usrcmds/.cpusb"; return 0;;
+          *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;
+        esac;;
+      u) __reinit; return 0;;
+      *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;;
+    esac
+  done
+  cd "$usrconfpath/.usrcmds/"
+}

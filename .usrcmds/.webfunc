@@ -88,12 +88,25 @@ theopath=~/Schreibtisch/Theoretische\ Informatik
 theourl="http://www.math.uni-heidelberg.de/logic/ss18/theoinf_ss18.html"
 theo() {
   __download() {
-    outdir="$theopath/Übungsblätter"
-    if [ ! -d "$outdir" ]; then
-      mkdir -p "$outdir"
+    dlurl=${theourl:0:$((${#theourl}-10))}
+    exerdir="$theopath/Übungsblätter"
+    if [ ! -d "$exerdir" ]; then
+      mkdir -p "$exerdir"
     fi
-    cd "$outdir"
-    curl --remote-name-all -f ${theourl:0:$((${#theourl}-10))}/SS18_Blatt_{1..15}.pdf
+    cd "$exerdir"
+    for url in "$dlurl/"SS18_Blatt_{1..15}.pdf; do
+      echo "$url"
+      curl -Of "$url"
+    done
+    vldir="$theopath/Folien"
+    if [ ! -d "$vldir" ]; then
+      mkdir -p "$vldir"
+    fi
+    cd "$vldir"
+    for url in "$dlurl/"2018-TI-Folien%200{0..9}-DV.pdf; do
+      echo "$url"
+      curl -Of "$url"
+    done
   }
   OPTIND=1
   while getopts ":cd-:" opt

@@ -14,6 +14,6 @@
 alias cpdir='cp -r'
 
 # Standard opener for files
-alias o=xdg-open
+alias o='xdg-open 2> /dev/null'
 
 alias pgadmin4='~/pgadmin4/pgadmin4'

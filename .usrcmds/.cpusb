@@ -1,5 +1,10 @@
 # This function write and reads to usb.
 cpusb() {
+  echo "### cpusb: This function is not safe! ###"
+  echo "  Please come back later when it is fixed."
+  return 4
+
+
   if [ $# -gt 3 -o $# -lt 2 ]; then
     echo "Usage: cpusb -[OPTIONS] sd[a-z][1-9] TARGET"
     return 1

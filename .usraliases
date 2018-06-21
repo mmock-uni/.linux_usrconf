@@ -9,6 +9,7 @@
     export desk=~/Schreibtisch
     # ... to bash configuration
     alias bashconf='vim ~/.bashrc'
+    alias cdh='cd ~'
 
 # copy dir to path
 alias cpdir='cp -r'

@@ -5,12 +5,12 @@ usrconf() {
     . ~/.bashrc
   }
   OPTIND=1
-  while getopts ":u-:" opt
+  while getopts ":r-:" opt
   do
     case "$opt" in
       "-")  # check for long parameters
         case "$OPTARG" in
-          update) __reinit; return 0;;
+          reinit) __reinit; return 0;;
           usraliases) subl "$usrconfpath/.usraliases"; return 0;;
           usrfunc) subl "$usrconfpath/.usrcmds/.usrfunc"; return 0;;
           webfunc) subl "$usrconfpath/.usrcmds/.webfunc"; return 0;;
@@ -18,7 +18,7 @@ usrconf() {
           cpusb) subl "$usrconfpath/.usrcmds/.cpusb"; return 0;;
           *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;
         esac;;
-      u) __reinit; return 0;;
+      r) __reinit; return 0;;
       *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;;
     esac
   done

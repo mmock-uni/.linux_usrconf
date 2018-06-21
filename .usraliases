@@ -1,5 +1,6 @@
 # Vim style commands for terminal
     alias :q=exit
+    alias :r='usrconf -u' # update usrconf
 
 # Fast access...
     # ... to usb sticks
@@ -8,7 +9,6 @@
     export desk=~/Schreibtisch
     # ... to bash configuration
     alias bashconf='vim ~/.bashrc'
-    alias reinit='. ~/.bashrc'
 
 # copy dir to path
 alias cpdir='cp -r'

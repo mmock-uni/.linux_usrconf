@@ -11,7 +11,7 @@ if [ -d "$PATH_TO_THIS_REPOSITORY" ]; then
     for f in $(find)
     do
       if [ ! -d "$f" -a "${f:0:6}" != "./.git" -a "$f" != "./README.md" ]; then
-        echo "    > source $f"
+        echo "    > source ${f:2}"
         . "$f"
       fi
     done

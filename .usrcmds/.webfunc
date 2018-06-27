@@ -61,7 +61,10 @@ num() {
     fi
     cd "$outdir"
     dlurl=$(echo $numurl | sed "s/heidelberg.de\//&data\//g")
-    curl --remote-name-all -f ${dlurl}uebung0{1..9}.pdf
+    for url in "$dlurl"uebung{0{1..9},{10..13}}.pdf; do
+      echo "$url"
+      curl -Of "$url"
+    done
   }
   OPTIND=1
   while getopts ":cd-:" opt

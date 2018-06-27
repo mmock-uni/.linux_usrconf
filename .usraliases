@@ -18,3 +18,6 @@ alias cpdir='cp -r'
 alias o='xdg-open 2> /dev/null'
 
 alias pgadmin4='~/pgadmin4/pgadmin4'
+
+# alias for showing files after cd
+alias cdls='cdls() { cd "$1" && ls; }; cdls'

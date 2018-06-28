@@ -13,6 +13,9 @@ export desk=~/Schreibtisch
 alias bashconf='vim ~/.bashrc'
 # Fast access to home
 alias cdh='cd ~'
+# ~~~ FAST ACCESS to ESSENTIAL COMMANDS ~~~
+alias 1=cd
+alias 2=ls
 
 # copy dir to path
 alias cpdir='cp -r'

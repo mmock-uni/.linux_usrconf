@@ -65,10 +65,9 @@ cdi() {
       count=$[count+1]
     fi
   done
-  read -p "Select dir for cd [q to quit]: " input;
-  # Check for quit value
-  if [[ "$input" == "q" ]]; then
-    echo "Exiting due to user input."
+  read -p "Select dir for cd [cancel: c or ENTER]: " input;
+  # Check for cancel value
+  if [[ "$input" == "" || "$input" == "c" ]]; then
     return 0
   fi
   # Check if input is valid

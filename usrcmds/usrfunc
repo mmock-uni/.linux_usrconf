@@ -56,3 +56,34 @@ usrconf() {
     fi
   done
 }
+# Interactive cd
+cdi() {
+  count=1;
+  for l in $(ls -a --group-directories-first); do
+    if [[ -d "$l" && "$l" != "." ]]; then
+      echo "$count $l"
+      count=$[count+1]
+    fi
+  done
+  read -p "Select dir for cd [q to quit]: " input;
+  # Check for quit value
+  if [[ "$input" == "q" ]]; then
+    echo "Exiting due to user input."
+    return 0
+  fi
+  # Check if input is valid
+  regex="^-?[0-9]+$"
+  if [[ ! "$input" =~ $regex ]]; then
+    echo "Not a number."
+    return 1
+  fi
+  if [[ "$input" -lt 1 || "$input" -gt "$[count-1]" ]]; then
+    echo "Not a valid number."
+    return 1
+  fi
+  # Add 1 to input since '.' is first output of ls and we did skip it
+  cd $(ls -a --group-directories-first | head -$[input+1] | tail -1)
+  echo "You are now in directory: $PWD"
+  # Rerun function because user may want to cd further
+  cdi
+}

@@ -1,17 +1,18 @@
-# Vim style commands for terminal
-    alias :q=exit
-    alias :r='usrconf -r' # reinit usrconf
-    alias :R=':r'
-    alias :E=':e'
+# ~~~ VIM STYLE COMMANDS ~~~
+alias :q=exit
+alias :r='usrconf -r' # reinit usrconf
+alias :R=':r'
+alias :E=':e'
 
-# Fast access...
-    # ... to usb sticks
-    alias cdusb='cd /media/ekzyis/ && ls'
-    # ... to desktop
-    export desk=~/Schreibtisch
-    # ... to bash configuration
-    alias bashconf='vim ~/.bashrc'
-    alias cdh='cd ~'
+# ~~~ FAST ACCESS ~~~
+# Fast access to usb sticks
+alias cdusb='cd /media/ekzyis/ && ls'
+# Desktop variable
+export desk=~/Schreibtisch
+# Fast access to bash configuration
+alias bashconf='vim ~/.bashrc'
+# Fast access to home
+alias cdh='cd ~'
 
 # copy dir to path
 alias cpdir='cp -r'

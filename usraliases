@@ -1,6 +1,8 @@
 # Vim style commands for terminal
     alias :q=exit
     alias :r='usrconf -r' # reinit usrconf
+    alias :R=':r'
+    alias :E=':e'
 
 # Fast access...
     # ... to usb sticks

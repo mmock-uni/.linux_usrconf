@@ -13,6 +13,8 @@ export desk=~/Schreibtisch
 alias bashconf='vim ~/.bashrc'
 # Fast access to home
 alias cdh='cd ~'
+# Fast access to desktop
+alias cdd='cd ~/Schreibtisch'
 # ~~~ FAST ACCESS to ESSENTIAL COMMANDS ~~~
 alias 1=cd
 alias 2=ls

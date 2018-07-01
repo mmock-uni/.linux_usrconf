@@ -26,7 +26,7 @@ _muesli() {
   # Login
   curl --silent --cookie cjar --cookie-jar cjar --output /dev/null --data "email=$mail" --data "password=$pw" -o /dev/null -L https://muesli.mathi.uni-heidelberg.de/user/login
   # Get the actual website and parse it
-  curl --silent --cookie cjar -L "$1" | grep -oE "Resultate für \w+\s*\w*|[0-9]+\.[0-9]\/[0-9]+\.[0-9]|Übungsblatt [0-9]+|[0-9]+%" > "$2"
+  curl --silent --cookie cjar -L "$1" | grep -oE "Resultate für \w+(\s*\w*)*|[0-9]+\.[0-9]\/[0-9]+\.[0-9]|Übungsblatt [0-9]+|[0-9]+%" > "$2"
   rm cjar
   vim "$2"
 }
@@ -75,17 +75,19 @@ num() {
     done
   }
   OPTIND=1
-  while getopts ":cd-:" opt
+  while getopts ":cdm-:" opt
   do
     case "$opt" in
       "-")  # check for long parameters
         case "$OPTARG" in
           chromium) chromium "$numurl";;
           download) __download;;
+          muesli) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
           *) echo "num: Ungültige Option -- $OPTARG"
         esac;;
       c) chromium "$numurl";;
       d) __download;;
+      m) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
       *) echo "num: Ungültige Option -- $OPTARG"
     esac
   done
@@ -120,17 +122,19 @@ theo() {
     done
   }
   OPTIND=1
-  while getopts ":cd-:" opt
+  while getopts ":cdm-:" opt
   do
      case "$opt" in
         "-")  # check for long parameters
           case "$OPTARG" in
             chromium) chromium "$theourl";;
             download) __download;;
+            muesli) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
             *) echo "theo: Ungültige Option -- $OPTARG"
           esac;;
         c) chromium "$theourl";;
         d) __download;;
+        m) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
         *) echo "theo: Ungültige Option -- $OPTARG"
      esac
   done

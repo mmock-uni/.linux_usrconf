@@ -118,7 +118,7 @@ theo() {
       mkdir -p "$vldir"
     fi
     cd "$vldir"
-    for url in "$dlurl/"2018-TI-Folien%20{0{0..9},{10..13}}-DV.pdf; do
+    for url in "$dlurl/"2018-TI-Folien%20{0{0..9},{10..15}}-DV.pdf; do
       echo "$url"
       curl -Of "$url"
     done

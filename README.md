@@ -1,5 +1,5 @@
 # .bash_usrconf
-To read in your personal configuration by bash, enter this into your ~/.bashrc:
+To read in your personal configuration by bash, add this to your ~/.bashrc:
 ```shell
 # _____________ USER _____________
 

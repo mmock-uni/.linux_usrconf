@@ -20,6 +20,7 @@ algosound() {
                 # open scinit.py with sublime in background with no shell output
                 ( subl $path/scinit.py & ) > /dev/null 2>&1
               fi
+              ;;
        esac
     done
     cd $path && git checkout $branch -q

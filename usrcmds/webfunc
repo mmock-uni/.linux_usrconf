@@ -48,11 +48,11 @@ db() {
             muesli)
               _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/846" "$dbpath/DBmuesli";;
             *)
-              echo "db: Ungültige Option -- $OPTARG"
+              echo "db: Ungültige Option -- $OPTARG";;
           esac;;
         c) chromium "$dburl";;
         m) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/846" "$dbpath/DBmuesli";;
-        *) echo "db: Ungültige Option -- $OPTARG"
+        *) echo "db: Ungültige Option -- $OPTARG";;
      esac
   done
   if [ -d "$dbpath" ]; then
@@ -85,12 +85,12 @@ num() {
           chromium) chromium "$numurl";;
           download) __download;;
           muesli) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
-          *) echo "num: Ungültige Option -- $OPTARG"
+          *) echo "num: Ungültige Option -- $OPTARG";;
         esac;;
       c) chromium "$numurl";;
       d) __download;;
       m) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
-      *) echo "num: Ungültige Option -- $OPTARG"
+      *) echo "num: Ungültige Option -- $OPTARG";;
     esac
   done
   if [ -d "$numpath" ]; then
@@ -133,12 +133,12 @@ theo() {
             chromium) chromium "$theourl";;
             download) __download;;
             muesli) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
-            *) echo "theo: Ungültige Option -- $OPTARG"
+            *) echo "theo: Ungültige Option -- $OPTARG";;
           esac;;
         c) chromium "$theourl";;
         d) __download;;
         m) _muesli "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
-        *) echo "theo: Ungültige Option -- $OPTARG"
+        *) echo "theo: Ungültige Option -- $OPTARG";;
      esac
   done
   if [ -d "$theopath" ]; then

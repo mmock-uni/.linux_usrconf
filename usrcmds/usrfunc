@@ -11,7 +11,7 @@ usrconf() {
       "-")  # check for long parameters
         case "$OPTARG" in
           reinit) __reinit; return 0;;
-          *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;
+          *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;;
         esac;;
       r) __reinit; return 0;;
       *) echo "usrconf: Ungültige Option -- $OPTARG"; return 1;;

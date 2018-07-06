@@ -96,6 +96,7 @@ num() {
   if [ -d "$numpath" ]; then
     cd "$numpath"
   fi
+  unset -f __download
 }
 
 # Theoretische Informatik
@@ -143,6 +144,7 @@ theo() {
   if [ -d "$theopath" ]; then
     cd "$theopath"
   fi
+  unset -f __download
 }
 
 # Müsli

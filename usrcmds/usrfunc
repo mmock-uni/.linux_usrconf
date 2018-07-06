@@ -18,6 +18,7 @@ usrconf() {
     esac
   done
   cd "$usrconfpath"
+  unset -f __reinit # remove __reinit function since it is not intended to use outside of this function
 }
 # Change user configuration files which are indexed by find-command.
 :e() {

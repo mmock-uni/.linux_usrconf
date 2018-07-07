@@ -6,17 +6,21 @@ chromium() {
 alias chr=chromium
 
 # Google
-    google() {
-        chromium https://google.com
-    }
-    # Google Drive
-    gdrive() {
-        chromium https://drive.google.com/drive/my-drive
-    }
-    # GMail
-    mail() {
-        chromium https://mail.google.com
-    }
+google() {
+    chromium https://google.com
+}
+# Google Drive
+gdrive() {
+    chromium https://drive.google.com/drive/my-drive
+}
+# GMail
+mail() {
+    chromium https://mail.google.com
+}
+
+# WEBSCRIPTS ALIASES
+alias muesli.sh=~/.bash_usrconf/usrcmds/scripts/muesli.sh
+alias download.sh=~/.bash_usrconf/usrcmds/scripts/download.sh
 
 # Datenbanken
 dbpath=~/Schreibtisch/Datenbanken
@@ -31,16 +35,16 @@ db() {
             chromium)
               chromium "$dburl";;
             muesli)
-              ~/.bash_usrconf/usrcmds/scripts/muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/846" "$dbpath/DBmuesli";;
+              muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/846" "$dbpath/DBmuesli";;
             *)
               echo "db: Ungültige Option -- $OPTARG";;
           esac;;
         c) chromium "$dburl";;
-        m) ~/.bash_usrconf/usrcmds/scripts/muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/846" "$dbpath/DBmuesli";;
+        m) muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/846" "$dbpath/DBmuesli";;
         *) echo "db: Ungültige Option -- $OPTARG";;
      esac
   done
-  if [ -d "$dbpath" ]; then
+  if [[ -d "$dbpath" ]]; then
     cd "$dbpath"
   fi
 }
@@ -51,15 +55,12 @@ numurl="https://conan.iwr.uni-heidelberg.de/teaching/numerik0_ss2018/"
 num() {
   __download() {
     outdir="$numpath/Übungsblätter"
-    if [ ! -d "$outdir" ]; then
+    if [[ ! -d "$outdir" ]]; then
       mkdir -p "$outdir"
     fi
     cd "$outdir"
     dlurl=$(echo $numurl | sed "s/heidelberg.de\//&data\//g")
-    for url in "$dlurl"uebung{0{1..9},{10..13}}.pdf; do
-      echo "$url"
-      curl -Of "$url"
-    done
+    download.sh "$dlurl"uebung{0{1..9},{10..13}}.pdf
   }
   OPTIND=1
   while getopts ":cdm-:" opt
@@ -69,16 +70,16 @@ num() {
         case "$OPTARG" in
           chromium) chromium "$numurl";;
           download) __download;;
-          muesli) ~/.bash_usrconf/usrcmds/scripts/muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
+          muesli) muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
           *) echo "num: Ungültige Option -- $OPTARG";;
         esac;;
       c) chromium "$numurl";;
       d) __download;;
-      m) ~/.bash_usrconf/usrcmds/scripts/muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
+      m) muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/867" "$numpath/NUMmuesli";;
       *) echo "num: Ungültige Option -- $OPTARG";;
     esac
   done
-  if [ -d "$numpath" ]; then
+  if [[ -d "$numpath" ]]; then
     cd "$numpath"
   fi
   unset -f __download
@@ -91,23 +92,17 @@ theo() {
   __download() {
     dlurl=${theourl:0:$((${#theourl}-10))}
     exerdir="$theopath/Übungsblätter"
-    if [ ! -d "$exerdir" ]; then
+    if [[ ! -d "$exerdir" ]]; then
       mkdir -p "$exerdir"
     fi
     cd "$exerdir"
-    for url in "$dlurl/"SS18_Blatt_{1..13}.pdf; do
-      echo "$url"
-      curl -Of "$url"
-    done
+    download.sh "$dlurl/"SS18_Blatt_{1..13}.pdf
     vldir="$theopath/Folien"
-    if [ ! -d "$vldir" ]; then
+    if [[ ! -d "$vldir" ]]; then
       mkdir -p "$vldir"
     fi
     cd "$vldir"
-    for url in "$dlurl/"2018-TI-Folien%20{0{0..9},{10..15}}-DV.pdf; do
-      echo "$url"
-      curl -Of "$url"
-    done
+    download.sh "$dlurl/"2018-TI-Folien%20{0{0..9},{10..15}}-DV.pdf
   }
   OPTIND=1
   while getopts ":cdm-:" opt
@@ -117,16 +112,16 @@ theo() {
           case "$OPTARG" in
             chromium) chromium "$theourl";;
             download) __download;;
-            muesli) ~/.bash_usrconf/usrcmds/scripts/muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
+            muesli) muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
             *) echo "theo: Ungültige Option -- $OPTARG";;
           esac;;
         c) chromium "$theourl";;
         d) __download;;
-        m) ~/.bash_usrconf/usrcmds/scripts/muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
+        m) muesli.sh "https://muesli.mathi.uni-heidelberg.de/lecture/view_points/847" "$theopath/TImuesli";;
         *) echo "theo: Ungültige Option -- $OPTARG";;
      esac
   done
-  if [ -d "$theopath" ]; then
+  if [[ -d "$theopath" ]]; then
     cd "$theopath"
   fi
   unset -f __download
@@ -139,7 +134,7 @@ müsli() {
 
 # Ricoh
 ricoh() {
-    chromium https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cfm
+  chromium https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cfm
 }
 
 # Discord

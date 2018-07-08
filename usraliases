@@ -29,3 +29,5 @@ alias pgadmin4='~/pgadmin4/pgadmin4'
 
 # alias for showing files after cd
 alias cdls='cdls() { cd "$1" && ls; }; cdls'
+
+alias steam='( steam & ) > /dev/null 2>&1'

@@ -102,7 +102,7 @@ theo() {
       mkdir -p "$vldir"
     fi
     cd "$vldir"
-    download.sh "$dlurl/"2018-TI-Folien%20{0{0..9},{10..15}}-DV.pdf
+    download.sh "$dlurl/"2018-TI-Folien%20{0{0..9},{10..20}}-DV.pdf
   }
   OPTIND=1
   while getopts ":cdm-:" opt

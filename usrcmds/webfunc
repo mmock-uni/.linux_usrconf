@@ -5,20 +5,29 @@ chromium() {
 }
 alias chr=chromium
 
-# Google
-google() {
-    chromium https://google.com
-}
-# Google Drive
-gdrive() {
-    chromium https://drive.google.com/drive/my-drive
-}
-# GMail
-mail() {
-    chromium https://mail.google.com
-}
+############################
+# ~~~ CHROMIUM ALIASES ~~~ #
+############################
 
-# WEBSCRIPTS ALIASES
+# Google
+alias google='chr https://google.com'
+# Google Drive
+alias gdrive='chr https://drive.google.com/drive/my-drive'
+# GMail
+alias mail='chr https://mail.google.com'
+# Müsli
+alias müsli='chr https://muesli.mathi.uni-heidelberg.de/user/login'
+# Ricoh
+alias ricoh='chr https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cfm'
+# Discord
+alias discord='chr https://discordapp.com/channels/@me'
+# Github
+alias github='chr https://github.com/'
+
+##############################
+# ~~~ WEBSCRIPTS ALIASES ~~~ #
+##############################
+
 alias muesli.sh=~/.bash_usrconf/usrcmds/scripts/muesli.sh
 alias download.sh=~/.bash_usrconf/usrcmds/scripts/download.sh
 
@@ -125,19 +134,4 @@ theo() {
     cd "$theopath"
   fi
   unset -f __download
-}
-
-# Müsli
-müsli() {
-  chromium https://muesli.mathi.uni-heidelberg.de/user/login
-}
-
-# Ricoh
-ricoh() {
-  chromium https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cfm
-}
-
-# Discord
-discord() {
-  chromium https://discordapp.com/channels/@me
 }

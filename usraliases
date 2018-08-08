@@ -28,6 +28,18 @@ alias pgadmin4='~/pgadmin4/pgadmin4'
 # open steam in background
 alias steam='( steam & ) > /dev/null 2>&1'
 
+# webstorm
+alias webstorm='( /opt/WebStorm-182.3684.70/bin/webstorm.sh & ) > /dev/null 2>&1'
+
+# intellij idea community edition
+alias ideac='( /opt/idea-IC-181.5281.24/bin/idea.sh & ) > /dev/null 2>&1'
+
+# intellij idea ultimate edition
+alias ideau='(/opt/idea-IU-182.3684.101/bin/idea.sh & ) > /dev/null 2>&1'
+
+# postman
+alias postman="(/opt/Postman/./Postman & ) > /dev/null 2>&1"
+
 #############################################
 # ~~~ FAST ACCESS to ESSENTIAL COMMANDS ~~~ #
 #############################################

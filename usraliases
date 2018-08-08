@@ -1,21 +1,43 @@
-# ~~~ VIM STYLE COMMANDS ~~~
+##############################
+# ~~~ VIM STYLE COMMANDS ~~~ #
+##############################
 alias :q=exit
 alias :r='usrconf -r' # reinit usrconf
 alias :R=':r'
 alias :E=':e'
 
-# ~~~ FAST ACCESS ~~~
+##############################################
+# ~~~ FAST ACCESS to FILES / DIRECTORIES ~~~ #
+##############################################
+
 # Fast access to usb sticks
 alias cdusb='cd /media/ekzyis/ && ls'
+
 # Desktop variable
 export desk=~/Schreibtisch
-# Fast access to bash configuration
+
+# open bash configuration with vim
 alias bashconf='vim ~/.bashrc'
-# Fast access to desktop
+
+# cd to desktop
 alias cdd='cd ~/Schreibtisch'
-# ~~~ FAST ACCESS to ESSENTIAL COMMANDS ~~~
+
+# open pgadmin4
+alias pgadmin4='~/pgadmin4/pgadmin4'
+
+# open steam in background
+alias steam='( steam & ) > /dev/null 2>&1'
+
+#############################################
+# ~~~ FAST ACCESS to ESSENTIAL COMMANDS ~~~ #
+#############################################
+
 alias 1=cd
 alias 2=ls
+
+###################################
+# ~~~ FAST ACCESS to COMMANDS ~~~ #
+###################################
 
 # copy dir to path
 alias cpdir='cp -r'
@@ -23,11 +45,7 @@ alias cpdir='cp -r'
 # Standard opener for files
 alias o='xdg-open 2> /dev/null'
 
-alias pgadmin4='~/pgadmin4/pgadmin4'
-
 # alias for showing files after cd
 alias cdls='cdls() { cd "$1" && ls; }; cdls'
-
-alias steam='( steam & ) > /dev/null 2>&1'
 
 alias psg='ps -A | grep'

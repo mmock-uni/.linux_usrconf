@@ -23,7 +23,7 @@ alias bashconf='vim ~/.bashrc'
 alias cdd='cd ~/Schreibtisch'
 
 # open pgadmin4
-alias pgadmin4='~/pgadmin4/pgadmin4'
+alias pgadmin4='/opt/pgadmin4/pgadmin4'
 
 # open steam in background
 alias steam='( steam & ) > /dev/null 2>&1'

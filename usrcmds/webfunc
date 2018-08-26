@@ -23,6 +23,8 @@ alias ricoh='chr https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cf
 alias discord='chr https://discordapp.com/channels/@me'
 # Github
 alias github='chr https://github.com/'
+# YouTube
+alias yt='chr https://www.youtube.com/'
 
 ##############################
 # ~~~ WEBSCRIPTS ALIASES ~~~ #

@@ -20,4 +20,4 @@ fi
 ```
 Please notice that the repository needs to be located at ~/ for following reasons:
 * the code above includes the statement `cd ~/.bash_usrconf`
-* the scripts inside usrcmds/scripts/ are called via hardcoded paths. This means some files (like webfunc) have some hardcoded paths in them to call those scripts.
+* the scripts inside usrcmds/scripts/ are called via hardcoded paths. This means some files (like webfunc) have some hardcoded paths (like [this](https://github.com/ekzyis/.bash_usrconf/blob/8a0ec850efdad0bc4db50687b3a6e881a453c9e7/usrcmds/webfunc#L31)) in them to call those

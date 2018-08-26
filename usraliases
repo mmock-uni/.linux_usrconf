@@ -46,6 +46,7 @@ alias postman="(/opt/Postman/./Postman & ) > /dev/null 2>&1"
 
 alias 1=cd
 alias 2=ls
+alias ..='cd ..'
 
 ###################################
 # ~~~ FAST ACCESS to COMMANDS ~~~ #

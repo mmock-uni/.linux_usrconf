@@ -13,6 +13,9 @@ alias :E=':e'
 # Fast access to usb sticks
 alias cdusb='cd /media/ekzyis/ && ls'
 
+# Fast access to download dir
+alias cddow='cd ~/Downloads && ls'
+
 # Desktop variable
 export desk=~/Schreibtisch
 

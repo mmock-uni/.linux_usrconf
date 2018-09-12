@@ -78,7 +78,9 @@ cdi() {
   i=1
   printf "You are in directory: ${LIGHTGREEN}$PWD${NC}\n"
   for d in "${dirs[@]}"; do
-    printf "%-4d" "${i}"
+    # $(($number_of_digits_of_dircount+1)):
+    # -> needed space between index and dirname for pretty printing
+    printf "%-$((${#count}+1))d" "${i}"
     printf "%-10s\n" "${d}"
     i=$[i+1]
   done | column

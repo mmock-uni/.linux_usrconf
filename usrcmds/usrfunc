@@ -60,8 +60,9 @@ usrconf() {
 # Interactive cd
 cdi() {
   dirs=()
-  LIGHTGREEN='\033[0;32m'
+  GREEN='\033[1;32m'
   NC='\033[0m' # No Color
+  RED='\033[1;31m'
   count=1
   for l in $(ls -a --group-directories-first); do
     # only write directories to terminal
@@ -76,7 +77,7 @@ cdi() {
     fi
   done
   i=1
-  printf "You are in directory: ${LIGHTGREEN}$PWD${NC}\n"
+  printf "You are in directory: ${GREEN}$PWD${NC}\n"
   for d in "${dirs[@]}"; do
     # $(($number_of_digits_of_dircount+1)):
     # -> needed space between index and dirname for pretty printing
@@ -84,7 +85,8 @@ cdi() {
     printf "%-10s\n" "${d}"
     i=$[i+1]
   done | column
-  read -p "Select dir for cd [cancel: c or ENTER]: " input;
+  printf "${RED}Press 'c' or 'ENTER' to cancel${NC}\n"
+  read -p "cd to index: " input
   # Check for cancel value
   if [[ "$input" == "" || "$input" == "c" ]]; then
     return 0

@@ -106,3 +106,7 @@ cdi() {
   # Rerun function because user may want to cd further
   cdi
 }
+# Go n up
+up() {
+  cd $(printf "%0.s../" $(seq 1 $1 ));
+}

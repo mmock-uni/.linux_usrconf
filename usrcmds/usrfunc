@@ -59,13 +59,23 @@ usrconf() {
 }
 # Interactive cd
 cdi() {
+  dirs=()
   count=1;
   for l in $(ls -a --group-directories-first); do
-    if [[ -d "$l" && "$l" != "." ]]; then
-      echo "$count $l"
-      count=$[count+1]
+    # only write directories to terminal
+    if [[ -d "$l" ]]; then
+      if [[ "$l" != "." ]]; then
+        dirs+=("$count $l")
+        count=$[count+1]
+      fi
+    else
+      # due to `--group-directories-first` we can break after first non-dir
+      break
     fi
   done
+  for d in "${dirs[@]}"; do
+    printf "%-10s\n" "${d}"
+  done | column
   read -p "Select dir for cd [cancel: c or ENTER]: " input;
   # Check for cancel value
   if [[ "$input" == "" || "$input" == "c" ]]; then

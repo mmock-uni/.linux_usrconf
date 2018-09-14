@@ -1,6 +1,7 @@
 ##############################
 # ~~~ VIM STYLE COMMANDS ~~~ #
 ##############################
+
 alias :q=exit
 alias :r='usrconf -r' # reinit usrconf
 alias :R=':r'
@@ -43,17 +44,11 @@ alias ideau='(/opt/idea-IU-182.3684.101/bin/idea.sh & ) > /dev/null 2>&1'
 # postman
 alias postman="(/opt/Postman/./Postman & ) > /dev/null 2>&1"
 
-#############################################
-# ~~~ FAST ACCESS to ESSENTIAL COMMANDS ~~~ #
-#############################################
-
-alias 1=cd
-alias 2=ls
-alias ..='cd ..'
-
 ###################################
 # ~~~ FAST ACCESS to COMMANDS ~~~ #
 ###################################
+
+alias ..='cd ..'
 
 # copy dir to path
 alias cpdir='cp -r'

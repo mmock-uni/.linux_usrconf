@@ -18,13 +18,13 @@ alias cdusb='cd /media/ekzyis/ && ls'
 alias cddow='cd ~/Downloads && ls'
 
 # Desktop variable
-export desk=~/Schreibtisch
+export ds=~/Desktop
 
 # open bash configuration with vim
 alias bashconf='vim ~/.bashrc'
 
 # cd to desktop
-alias cdd='cd ~/Schreibtisch'
+alias cdd='cd ~/Desktop'
 
 # open pgadmin4
 alias pgadmin4='/opt/pgadmin4/pgadmin4'

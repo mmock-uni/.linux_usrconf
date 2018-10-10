@@ -1,0 +1,21 @@
+[push]
+	default = simple
+[alias]
+  s = status
+  l = log -3 --oneline --decorate
+  rl = reflog -3
+  cb = checkout -b
+  b = branch
+  bd = branch -d
+  ch  = "!f(){ git checkout --quiet \"$1\" && git status; };f"
+  a = add
+  aa = "!f(){ git add --all && git status; };f"
+  co = commit
+  cc = commit -c
+  ccc = commit -C
+  f = fetch
+  d = diff
+  ds = diff --staged
+  p = push
+  rbi = rebase -i
+  ca = commit --amend

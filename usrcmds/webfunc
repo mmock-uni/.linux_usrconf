@@ -30,8 +30,8 @@ alias yt='chr https://www.youtube.com/'
 # ~~~ WEBSCRIPTS ALIASES ~~~ #
 ##############################
 
-alias muesli.sh=~/.bash_usrconf/usrcmds/scripts/muesli.sh
-alias download.sh=~/.bash_usrconf/usrcmds/scripts/download.sh
+alias muesli.sh=~/.linux_usrconf/usrcmds/scripts/muesli.sh
+alias download.sh=~/.linux_usrconf/usrcmds/scripts/download.sh
 
 # Datenbanken
 dbpath=~/Schreibtisch/Datenbanken

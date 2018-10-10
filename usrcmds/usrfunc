@@ -1,5 +1,5 @@
 # User configuration
-usrconfpath=~/.bash_usrconf
+usrconfpath=~/.linux_usrconf
 usrconf() {
   __reinit() {
     . ~/.bashrc

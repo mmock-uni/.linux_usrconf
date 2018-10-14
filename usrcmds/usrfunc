@@ -81,8 +81,7 @@ cdi() {
   for d in "${dirs[@]}"; do
     # $(($number_of_digits_of_dircount+1)):
     # -> needed space between index and dirname for pretty printing
-    printf "%-$((${#count}+1))d" "${i}"
-    printf "%-10s\n" "${d}"
+    printf "%-$((${#count}+1))d %-10s\n" "${i}" "${d}"
     i=$[i+1]
   done | column
   printf "${RED}Press 'c' or 'ENTER' to cancel${NC}\n"

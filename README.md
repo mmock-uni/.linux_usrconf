@@ -1,4 +1,7 @@
 # .linux_usrconf
+
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 To read in your personal configuration by bash, add this to your ~/.bashrc:
 ```shell
 # _____________ USER _____________

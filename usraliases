@@ -11,6 +11,9 @@ alias :E=':e'
 # ~~~ FAST ACCESS to FILES / DIRECTORIES ~~~ #
 ##############################################
 
+# cd to desktop
+alias cdd='cd ~/Desktop'
+
 # Fast access to usb sticks
 alias cdm='cd /media/$USER/ && ls'
 
@@ -23,8 +26,6 @@ export ds=~/Desktop
 # open bash configuration with vim
 alias bashconf='vim ~/.bashrc'
 
-# cd to desktop
-alias cdd='cd ~/Desktop'
 
 ###################################
 # ~~~ FAST ACCESS to COMMANDS ~~~ #

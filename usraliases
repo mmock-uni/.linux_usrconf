@@ -12,7 +12,7 @@ alias :E=':e'
 ##############################################
 
 # Fast access to usb sticks
-alias cdusb='cd /media/ekzyis/ && ls'
+alias cdm='cd /media/$USER/ && ls'
 
 # Fast access to download dir
 alias cddow='cd ~/Downloads && ls'

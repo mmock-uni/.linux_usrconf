@@ -42,3 +42,31 @@ alias o='xdg-open 2> /dev/null'
 alias cdls='cdls() { cd "$1" && ls; }; cdls'
 
 alias psg='ps -A | grep'
+
+##################################
+# ~~~ CHROMIUM / WEB ALIASES ~~~ #
+##################################
+
+# Open website with chromium in background and no shell output
+chromium() {
+  ( chromium-browser "$1" & ) > /dev/null 2>&1
+  # redirects stdout to /dev/null and stderr to stdout
+}
+alias chr=chromium
+
+# Google
+alias google='chr https://google.com'
+# Google Drive
+alias gdrive='chr https://drive.google.com/drive/my-drive'
+# GMail
+alias mail='chr https://mail.google.com'
+# Müsli
+alias müsli='chr https://muesli.mathi.uni-heidelberg.de/user/login'
+# Ricoh
+alias ricoh='chr https://ricoh-eop.urz.uni-heidelberg.de/login.cfm?dest=index.cfm'
+# Discord
+alias discord='chr https://discordapp.com/channels/@me'
+# Github
+alias github='chr https://github.com/'
+# YouTube
+alias yt='chr https://www.youtube.com/'

@@ -1,7 +1,0 @@
-##################################
-# ~~~ ALIASES TO USE SCRIPTS ~~~ #
-##################################
-
-alias db='~/.linux_usrconf/bash_exclude/scripts/db.sh'
-alias muesli.sh='~/.linux_usrconf/bash_exclude/scripts/muesli.sh'
-alias download.sh='~/.linux_usrconf/bash_exclude/scripts/download.sh'

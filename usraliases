@@ -71,3 +71,11 @@ alias discord='chr https://discordapp.com/channels/@me'
 alias github='chr https://github.com/'
 # YouTube
 alias yt='chr https://www.youtube.com/'
+
+##################################
+# ~~~ ALIASES TO USE SCRIPTS ~~~ #
+##################################
+
+alias db='~/.linux_usrconf/bash_exclude/scripts/db.sh'
+alias muesli.sh='~/.linux_usrconf/bash_exclude/scripts/muesli.sh'
+alias download.sh='~/.linux_usrconf/bash_exclude/scripts/download.sh'

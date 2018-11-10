@@ -3,7 +3,7 @@
 ##############################
 
 alias :q=exit
-alias :r='usrconf -r' # reinit usrconf
+alias :r='. ~/.bashrc' # reinit usrconf
 alias :R=':r'
 alias :E=':e'
 
@@ -25,7 +25,6 @@ export ds=~/Desktop
 
 # open bash configuration with vim
 alias bashconf='vim ~/.bashrc'
-
 
 ###################################
 # ~~~ FAST ACCESS to COMMANDS ~~~ #

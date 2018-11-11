@@ -19,6 +19,8 @@ if [[ -d ~/.linux_usrconf ]]; then
     cd "$OLDPWD"
 fi
 ```
+or just execute the script */bash_exclude/init_usrconf.sh* (**This will configure everything, not only the terminal**) 
+
 Please notice that the repository needs to be located at ~/ for following reasons:
 * the code above includes the statement `cd ~/.linux_usrconf`
 * the scripts inside bash_exclude/scripts/ are called via hardcoded paths. This means some files (like webfunc) have some hardcoded paths in them to call those

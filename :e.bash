@@ -1,7 +1,7 @@
 # Change user configuration files which are indexed by find-command.
 :e() {          
-  cd "$usrconfpath"
-  echo "Indexing files in dir $usrconfpath..."
+  cd "$USRCONFPATH"
+  echo "Indexing files in dir $USRCONFPATH..."
   i=1
   findCmd="find . \( -path ./.git -o -path ./README.md \) -prune -o -type f -print"
   count=$(eval "$findCmd | wc -l")
@@ -26,8 +26,8 @@
   for f in $(eval "$findCmd"); do
     if [[ "$i" == "$input" ]]; then
       cd "$OLDPWD"
-      echo "running subl $usrconfpath/${f:2}"
-      subl "$usrconfpath/${f:2}"
+      echo "running subl $USRCONFPATH/${f:2}"
+      subl "$USRCONFPATH/${f:2}"
       return 0
     fi
     i=$[i+1]

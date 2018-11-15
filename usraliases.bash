@@ -31,6 +31,8 @@ export ds=~/Desktop
 # open bash configuration with vim
 alias bashconf='vim ~/.bashrc'
 
+alias up='up() { cd $(printf "%0.s../" $(seq 1 $1 )); };up'
+
 ###################################
 # ~~~ FAST ACCESS to COMMANDS ~~~ #
 ###################################

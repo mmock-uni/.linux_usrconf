@@ -14,5 +14,6 @@
   f = fetch
   d = diff
   ds = diff --staged
+  pr = pull --rebase
   rbi = "!f(){ git rebase -i HEAD~\"$1\"; };f"
   ca = commit --amend

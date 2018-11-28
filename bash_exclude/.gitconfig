@@ -11,8 +11,6 @@
   a = add
   aa = "!f(){ git add --all && git status; };f"
   co = commit
-  cc = commit -c
-  ccc = commit -C
   f = fetch
   d = diff
   ds = diff --staged
